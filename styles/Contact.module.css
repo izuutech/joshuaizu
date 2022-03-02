@@ -1,0 +1,47 @@
+.contact{
+    background-color: #233554;
+    padding-top: 30px;
+}
+.greenLine{
+    width: 50vw;
+    margin-left: 25%;
+    border-top: 2px #64ffda solid;
+    animation: greenLine 1s infinite;
+}
+@keyframes greenLine {
+    0%{width: 50vw;}
+    100%{width: 0vw;}
+}
+.containerHead{
+    padding-top: 10px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.contactHeadTxt{
+    color: #ccd6f6;
+}
+.containerBody{
+    padding-top: 10px;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    border-radius: 30px;
+    background-color: #112240;
+}
+.contactSpace{
+    padding-top: 60px;
+}
+
+.btn{
+    color: #64ffda;
+    border-color: #64ffda;
+    width: 50%;
+    margin-bottom: 20px;
+    /* display: flex;
+    justify-content: space-evenly; */
+}
+.emailIcon{
+    color: #64ffda;
+    margin-right: 5px;
+}

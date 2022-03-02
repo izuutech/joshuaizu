@@ -1,0 +1,92 @@
+.about{
+    background-color: #233554;
+}
+.greenLine{
+    width: 0vw;
+    margin-left: 25%;
+    border-top: 2px #64ffda solid;
+    animation: greenLine 1s infinite;
+}
+@keyframes greenLine {
+    0%{width: 0vw;}
+    100%{width: 50vw;}
+}
+.containerHead{
+    padding-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+.aboutTxt{
+    color: #ccd6f6;
+}
+.containerBody{
+    padding-top: 10px;
+    width: 100%;
+    text-align: left;
+}
+.aboutBodyTxt{
+    color: #ccd6f6;
+}
+.spanbold{
+    font-weight: bold;
+}
+.containerBody{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.centerImg{
+    display: flex;
+    justify-content: center;
+}
+.myImage{
+    position: relative;
+    display: block;
+    width: 25vw;
+    height: 25vw;
+    
+    border: solid 2px #64ffda;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.aboutme{
+    width: 65%;
+}
+.technology{
+    width: 100%;
+    margin-top: 10px;
+}
+.technologyHead{
+    text-align: center;
+    color: #E6F1FF;
+}
+.technologyBody{
+    color: #E6F1FF;
+}
+.avatarCircle{
+    background-color: #64ffda;
+    color: #233554;
+}
+
+
+@media screen and (max-width: 700px) {
+    .containerBody{
+        display: flex;
+        flex-direction: column;
+    }
+    .centerImg{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .myImage{
+        width: 50vw;
+        height: 50vw;
+    }
+    .aboutme{
+        width: 100%;
+    }
+}
+
+

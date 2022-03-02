@@ -1,0 +1,117 @@
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #233554;
+}
+.link{
+    cursor: pointer;
+}
+.blogHead{
+    padding-top: 20px;
+    color: #64ffda;
+    margin-bottom: 50px;
+}
+
+.flexContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.postContainer{
+    display: flex;
+    flex-direction: row;
+    width: 48%;
+    margin-bottom: 20px;
+}
+.blueSpace{
+    width: 98%;
+    background-color: #112240;
+    cursor: pointer;
+    color: #a8b2d1;
+}
+.greenSpace{
+    width: 2%;
+    background-color: #64ffda;
+}
+.postHead{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    color: #e6f1ff;
+    padding: 10px;
+}
+.offPostHead{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    color: #112240;
+    padding: 10px;
+}
+.postDown{
+    width: 100%;
+    padding: 10px;
+
+}
+
+
+
+
+/* for each post page */
+
+.thePostContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.noBlueSpace{
+    width: 98%;
+    background-color: #e6f1ff;
+    cursor: pointer;
+    color: #233554;
+}
+.noGreenSpace{
+    width: 2%;
+    background-color: #112240;
+}
+
+
+
+.modePosition{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #0a192f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #64ffda;
+    position: fixed;
+    right: 5%;
+    z-index: 13;
+    bottom: 3%;
+    cursor: pointer;
+}
+
+.visible{
+    display: block;
+}
+.notVisible{
+    display: none;
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+    .postContainer{
+        width: 100%;
+    }
+}
+
+
+
+

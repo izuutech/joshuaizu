@@ -1,0 +1,84 @@
+.works{
+    background-color: #233554;
+    padding-top: 30px;
+}
+
+.greenLine{
+    width: 0vw;
+    margin-left: 25%;
+    border-top: 2px #64ffda solid;
+    animation: greenLine 1s infinite;
+}
+@keyframes greenLine {
+    0%{width: 0vw;}
+    100%{width: 50vw;}
+}
+
+.containerHead{
+    padding-top: 10px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.contactHeadTxt{
+    color: #ccd6f6;
+}
+
+.worksDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-left: 5%;
+    justify-content: space-between;
+}
+.paper{
+    width: 45%;
+    background-color: #112240;
+    border-radius: 20px;
+    min-height: 100px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #a8b2d1;
+}
+
+.paperIcon{
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.folderDiv{
+    width: 40%;
+}
+.greenIcon{
+    color: #64ffda;
+    cursor: pointer;
+}
+.linkDiv{
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.greyIcon{
+    cursor: pointer;
+}
+
+.paperLang{
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+@media screen and (max-width: 700px) {
+    .worksDiv{
+        flex-direction: column;
+    }
+    .paper{
+        width: 100%;
+    }
+}
+
+.paper:hover{
+    box-shadow: 0px 0px 5px#8892b0;
+}

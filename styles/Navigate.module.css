@@ -1,0 +1,11 @@
+.buttonDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.navbtn{
+    border-color: #ccd6f6;
+}
