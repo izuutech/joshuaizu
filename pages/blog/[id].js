@@ -15,7 +15,7 @@ import HomeIcon from "@mui/icons-material/Home";
 
 
 export const getStaticPaths=async ()=>{
-    const res=await fetch(`http://localhost:5000/admincp/getpost`);
+    const res=await fetch(`http://joshuaizutechs.herokuapp.com/admincp/getpost`);
     const data=await res.json();
 
     
@@ -34,7 +34,7 @@ export const getStaticPaths=async ()=>{
 export const getStaticProps=async (context)=>{
     
     const id=context.params.id;
-    const res=await fetch("http://localhost:5000/admincp/getpost/"+id);
+    const res=await fetch("http://joshuaizutechs.herokuapp.com/admincp/getpost/"+id);
     
     const data=await res.json();
     

@@ -13,7 +13,7 @@ import axios from 'axios';
 
 
 const fetchTech=()=>{
-    return axios.get("http://localhost:5000/admincp/gettech")
+    return axios.get("http://joshuaizutechs.herokuapp.com/admincp/gettech")
     
 }
 
