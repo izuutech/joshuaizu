@@ -52,7 +52,7 @@
     color: #e6f1ff;
 }
 .blinkingLine{
-    color: #64ffda
+    color: #64ffda;
 }
 .noBlinkingLine{
     opacity: 0;
@@ -81,6 +81,11 @@
     0%{margin-top: 0%;}
     100%{margin-top: 10%;}
 }
+/* @keyframes blinking {
+    0%{display: none;}
+    100%{display: inline;}
+} */
+
 
 
 @media screen and (max-width: 500px) {

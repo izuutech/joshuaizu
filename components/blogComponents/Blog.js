@@ -31,8 +31,7 @@ const Blog = () => {
                         POSTS
                     </Typography>
                     <Typography variant="body2">
-                        My ramblings about things that exicite
-                        me. It's worth reading!
+                        My ramblings about things that exicite me. It&apos;s worth reading!
                     </Typography>
                     
                     
@@ -41,7 +40,8 @@ const Blog = () => {
                     
                     {
                         posts?.data?.data.map((post)=>(
-                            <Link href={`/blog/${post._id}`} key={post._id}>
+                            <Link href={"/blog/"+post._id} key={post._id}>
+                            <a>
                             <div className={styles.postContainer} >
                                 <div className={styles.blueSpace}>
                                 <div className={styles.postHead}>
@@ -61,6 +61,7 @@ const Blog = () => {
                                 </div>
                                 <div className={styles.greenSpace}></div>
                             </div>
+                            </a>
                             </Link>
                         ))
                     }

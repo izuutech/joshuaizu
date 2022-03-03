@@ -26,7 +26,7 @@ const TechnologyForm = () => {
     useEffect(()=>{
         setLogged(localStorage.getItem("loggedIn"))
         setJwt(localStorage.getItem("jwt"))
-    })
+    }, [])
 
 
     const {data: allTechs}=useQuery("get-techs", fetchTech)
@@ -109,11 +109,14 @@ const TechnologyForm = () => {
                         allTechs?.data?.data.map(tech=>(
                             
                                 <ListItemButton key={tech._id}>
-                                <ListItemAvatar 
-                                    children={
-                                        <Avatar onClick={()=>deleteTech(tech._id)}>{<DeleteIcon />}</Avatar>
-                                    }
-                                /><ListItemText 
+                                <ListItemAvatar>
+                                    <Avatar 
+                                    onClick={()=>deleteTech(tech._id)}
+                                    >
+                                        <DeleteIcon />
+                                    </Avatar>
+                                </ListItemAvatar>
+                                <ListItemText 
                                     primary={tech.technologyName} 
                                 />
                                 </ListItemButton>

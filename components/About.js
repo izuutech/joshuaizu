@@ -21,7 +21,7 @@ const fetchTech=()=>{
 const About = () => {
 
     const {data: allTech, status}=useQuery("get-tech", fetchTech)
-    console.log(allTech)
+   
     return ( 
         <div  className={styles.about}>
         <Container>
@@ -41,8 +41,7 @@ const About = () => {
                 
                 <div className={styles.aboutme}>
                     <Typography variant="subtitle" className={styles.aboutBodyTxt}>
-                        I'm Joshua Izu, a student of Computer Science at the Federal University
-                        Of Technology, Owerri(FUTO). I am a <span className={styles.spanbold}>Software Engineer</span> in the making.
+                        I&apos;m Joshua Izu, a student of Computer Science at the Federal University Of Technology, Owerri(FUTO). I am a <span className={styles.spanbold}>Software Engineer</span> in the making.
                         <br/><br/>
                         <Typography variant="subtitle">Other fields that interest me are <span className={styles.spanbold}>Machine learning, Human-Computer Interactions
                             and Backend development. </span>
@@ -76,11 +75,13 @@ const About = () => {
                         {status === "success" && (
                         allTech?.data?.data.map(tech=>(
                                     <ListItemButton key={tech._id}>
-                                    <ListItemAvatar 
-                                        children={
-                                            <Avatar className={styles.avatarCircle}>{tech.technologyName[0]}</Avatar>
-                                        }
-                                    />
+                                    <ListItemAvatar>
+                                        <Avatar 
+                                        className={styles.avatarCircle}
+                                        >
+                                        {tech.technologyName[0]}
+                                        </Avatar>
+                                    </ListItemAvatar>
                                     <ListItemText 
                                         primary={tech.technologyName} 
                                         className={styles.technologyBodyTxt} 

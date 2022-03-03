@@ -33,7 +33,7 @@ const BlogForm = () => {
     useEffect(()=>{
         setLogged(localStorage.getItem("loggedIn"))
         setJwt(localStorage.getItem("jwt"))
-    })
+    }, [])
 
     const {data: allBlogs}=useQuery("get-works", fetchWorks)
     
@@ -147,11 +147,15 @@ const BlogForm = () => {
                     allBlogs?.data?.data.map(post=>(
                         
                             <ListItemButton key={post._id}>
-                            <ListItemAvatar 
-                                children={
-                                    <Avatar onClick={()=>deletePost(post._id)}>{<DeleteIcon />}</Avatar>
-                                }
-                            /><ListItemText 
+                            <ListItemAvatar>
+                                <Avatar 
+                                onClick={()=>deletePost(post._id)}
+                                >
+                                <DeleteIcon />
+                                </Avatar>
+                            </ListItemAvatar>
+
+                            <ListItemText 
                                 primary={post.title}
                             />
                             </ListItemButton>

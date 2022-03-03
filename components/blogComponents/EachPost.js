@@ -33,14 +33,12 @@ const EachPost = ({post}) => {
             
             <Container>
                 <div className={styles.blogHead}>
-                    <Link href="/blog"><Typography variant="h4"  className={styles.link}>
+                    <Link href="/blog"><a><Typography variant="h4"  className={styles.link}>
                         POSTS
                     </Typography>
+                    </a>
                     </Link>
-                    <Typography variant="body2">
-                        My ramblings about things that exicite
-                        me. It's worth reading!
-                    </Typography>
+                    <Typography variant="body2">My ramblings about things that exicite me. It&apos;s worth reading!</Typography>
                     <Typography variant="body2">
                         by Joshua Izu
                     </Typography>

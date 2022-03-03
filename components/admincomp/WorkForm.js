@@ -33,7 +33,7 @@ const WorkForm = () => {
     useEffect(()=>{
         setLogged(localStorage.getItem("loggedIn"));
         setJwt(localStorage.getItem("jwt"))
-    })
+    }, [])
 
     const {data: allWorks}=useQuery("get-works", fetchWorks)
 
@@ -200,11 +200,14 @@ const WorkForm = () => {
                     allWorks?.data?.data.map(work=>(
                         
                             <ListItemButton key={work._id}>
-                            <ListItemAvatar 
-                                children={
-                                    <Avatar onClick={()=>deleteWork(work._id)}>{<DeleteIcon />}</Avatar>
-                                }
-                            /><ListItemText 
+                            <ListItemAvatar>
+                            <Avatar 
+                            onClick={()=>deleteWork(work._id)}
+                            >
+                                <DeleteIcon />
+                            </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText 
                                 primary={work.name}
                             />
                             </ListItemButton>

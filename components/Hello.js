@@ -22,9 +22,9 @@ const Hello = () => {
             setBlink(!blink);
         }, 500);
         return()=>clearInterval(interval)
-    })
+    }, [blink])
     const isBlink = blink ? (styles.blinkingLine) : (styles.noBlinkingLine);
-  
+    
     return ( 
         <div className={styles.template}>
         <div className={styles.container}>

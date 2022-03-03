@@ -23,7 +23,7 @@ const Contact = () => {
             </div>
             <div className={styles.contactSpace}>
             <Button variant="outlined" className={styles.btn}>
-                <EmailIcon className={styles.emailIcon}/>What's Up
+                <EmailIcon className={styles.emailIcon}/>What&apos;s Up
             </Button>
             </div>
             </div>
