@@ -41,7 +41,7 @@ const Blog = () => {
                     {
                         posts?.data?.data.map((post)=>(
                             <Link href={"/blog/"+post._id} key={post._id}>
-                            <a>
+                            <a className={styles.atag}>
                             <div className={styles.postContainer} >
                                 <div className={styles.blueSpace}>
                                 <div className={styles.postHead}>

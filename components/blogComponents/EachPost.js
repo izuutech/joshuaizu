@@ -33,7 +33,8 @@ const EachPost = ({post}) => {
             
             <Container>
                 <div className={styles.blogHead}>
-                    <Link href="/blog"><a><Typography variant="h4"  className={styles.link}>
+                    <Link href="/blog">
+                        <a className={styles.atagPost}><Typography variant="h4"  className={styles.link}>
                         POSTS
                     </Typography>
                     </a>
@@ -50,7 +51,7 @@ const EachPost = ({post}) => {
                             <Typography variant="h5" className={styles.title}>
                                 {post.title}
                             </Typography>
-                            <CoffeeIcon className={styles.titleShare}/>
+                            <CoffeeIcon className={styles.titleShare} onClick={buyCoffee}/>
                         </div>
                         <div className={styles.postDown}>
                             <Typography variant="body1">
