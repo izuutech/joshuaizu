@@ -2,6 +2,10 @@
     background-color: #233554;
     padding-top: 30px;
 }
+.aTagWorks{
+    text-decoration: none;
+    color: #64ffda;
+}
 
 .greenLine{
     width: 0vw;

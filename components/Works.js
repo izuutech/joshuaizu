@@ -54,8 +54,8 @@ const Works = () => {
                                   <FolderOpenIcon className={styles.greenIcon}/>
                               </div>
                               <div className={styles.linkDiv}>
-                                  <a><GitHubIcon className={styles.greyIcon}/></a>
-                                  <a><LinkIcon className={styles.greyIcon}/></a>
+                                  <a className={styles.aTagWorks}><GitHubIcon className={styles.greyIcon}/></a>
+                                  <a className={styles.aTagWorks}><LinkIcon className={styles.greyIcon}/></a>
                               </div>
                           </div>
                           <Typography variant="h6"></Typography>
