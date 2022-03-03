@@ -74,8 +74,8 @@ const Works = () => {
                                     <FolderOpenIcon className={styles.greenIcon}/>
                                 </div>
                                 <div className={styles.linkDiv}>
-                                    <a href={work.github}><GitHubIcon className={styles.greyIcon}/></a>
-                                    <a href={work.link}><LinkIcon className={styles.greyIcon}/></a>
+                                    <a href={work.github} className={styles.aTagWorks}><GitHubIcon className={styles.greyIcon}/></a>
+                                    <a href={work.link} className={styles.aTagWorks}><LinkIcon className={styles.greyIcon}/></a>
                                 </div>
                             </div>
                             <Typography variant="h6">{work.name}</Typography>
