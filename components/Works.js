@@ -10,7 +10,7 @@ import {useQuery} from 'react-query';
 
 
 const fetchWorks=()=>{
-    return axios.get("http://joshuaizutechs.herokuapp.com/admincp/getwork")
+    return axios.get("https://joshuaizutechs.herokuapp.com/admincp/getwork")
     
 }
 

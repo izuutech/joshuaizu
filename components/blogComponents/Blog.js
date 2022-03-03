@@ -8,7 +8,7 @@ import axios from "axios";
 
 
 const fetchPosts=()=>{
-    return axios.get("http://joshuaizutechs.herokuapp.com/admincp/getpost/users?page=1")
+    return axios.get("https://joshuaizutechs.herokuapp.com/admincp/getpost/users?page=1")
 }
 
 

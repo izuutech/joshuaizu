@@ -18,7 +18,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 
 const fetchWorks=()=>{
-    return axios.get("http://joshuaizutechs.herokuapp.com/admincp/getpost")
+    return axios.get("https://joshuaizutechs.herokuapp.com/admincp/getpost")
     
 }
 
@@ -59,7 +59,7 @@ const BlogForm = () => {
     const addPost=(e)=>{
         e.preventDefault();
         console.log(JSON.stringify({title: title}))
-        fetch("http://joshuaizutechs.herokuapp.com/admincp/createpost", 
+        fetch("https://joshuaizutechs.herokuapp.com/admincp/createpost", 
         {
             method: "POST",
             headers: {
@@ -81,7 +81,7 @@ const BlogForm = () => {
     }
     const deletePost=(postId)=>{
         
-        fetch(`http://joshuaizutechs.herokuapp.com/admincp/deletepost/${postId}`, 
+        fetch(`https://joshuaizutechs.herokuapp.com/admincp/deletepost/${postId}`, 
         {
             method: "DELETE",
             headers: {
