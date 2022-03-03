@@ -5,7 +5,13 @@ import Button from '@mui/material/Button';
 import EmailIcon from "@mui/icons-material/Email";
 
 
+
+
 const Contact = () => {
+
+    const sendMail=()=>{
+        window.location.href="mailto:izutechsofficial@gmail.com";
+    }
     return ( 
         <div className={styles.contact}>
             <div className={styles.greenLine}></div>
@@ -17,12 +23,11 @@ const Contact = () => {
             <Typography variant="h5" className={styles.contactHeadTxt}>What Can I Do For You?</Typography>
             <div className={styles.contactSpace}>
             <Typography variant="body1" className={styles.contactHeadTxt}>
-            You can contact me via izuuushs@gmail.com or <br/>
-            by clicking the button below
+            You can contact me via tiktok @iam_izuuranking. Alternatively, you can click the button below to reach me via email
             </Typography>
             </div>
             <div className={styles.contactSpace}>
-            <Button variant="outlined" className={styles.btn}>
+            <Button variant="outlined" className={styles.btn} onClick={sendMail}>
                 <EmailIcon className={styles.emailIcon}/>What&apos;s Up
             </Button>
             </div>

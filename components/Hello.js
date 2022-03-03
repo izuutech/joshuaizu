@@ -31,7 +31,7 @@ const Hello = () => {
             
                 
                 <div className={styles.robotDiv}>
-                    <Image src="/Robot.png" alt="Beautiful Robot Guy" layout="fill" objectFit="contain"/>
+                    <Image src="/Robot.png" alt="Beautiful Robot Guy" layout="fill" objectFit="contain" priority="true" />
                 </div>
                 <Container>
                     <div className={styles.myText}>

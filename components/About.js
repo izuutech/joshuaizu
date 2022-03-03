@@ -34,7 +34,7 @@ const About = () => {
                 
                 <div className={styles.centerImg}>
                 <div className={styles.myImage}>
-                    <Image src="/myImage.jpg" alt="Me" layout="fill" objectFit="cover"/>
+                    <Image src="/myImage.png" alt="Me" layout="fill" objectFit="cover"/>
                 </div>
                 </div>
                     
