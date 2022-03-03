@@ -36,9 +36,9 @@ const Footer = () => {
                 </Typography>
             </div>
             <div className={styles.footerIcons}>
-                <a href="https://github.com/izuutech"><GitHubIcon /></a>
-                <a href="https://wwww.twitter.com/amaechiizu1"><TwitterIcon /></a>
-                <a href="https://www.instagram.com/iam_izuuranking"><InstagramIcon /></a>
+                <a href="https://github.com/izuutech" className={styles.fIcons}><GitHubIcon /></a>
+                <a href="https://wwww.twitter.com/amaechiizu1" className={styles.fIcons}><TwitterIcon /></a>
+                <a href="https://www.instagram.com/iam_izuuranking" className={styles.fIcons}><InstagramIcon /></a>
             </div>
         </div>
      );

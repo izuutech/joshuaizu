@@ -23,7 +23,7 @@ const Contact = () => {
             <Typography variant="h5" className={styles.contactHeadTxt}>What Can I Do For You?</Typography>
             <div className={styles.contactSpace}>
             <Typography variant="body1" className={styles.contactHeadTxt}>
-            You can contact me via tiktok @iam_izuuranking. Alternatively, you can click the button below to reach me via email
+            You can contact me via TikTok @iam_izuuranking. Alternatively, you can click the button below to reach me via email
             </Typography>
             </div>
             <div className={styles.contactSpace}>
