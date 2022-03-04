@@ -90,7 +90,7 @@ const WorkForm = () => {
                 link: workLink,  
             })
         })
-        .then(res=res.json())
+        .then(res=>res.json())
         .then((data)=>{
             if(data.error){
                 alert(data.error);
