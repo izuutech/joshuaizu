@@ -38,6 +38,8 @@ const EachPost = ({post}) => {
                     alert("You liked the post");
                 })
                 .catch((err)=>console.log(err))
+            }else{
+                alert("You already liked the post");
             }
         }
         useEffect(()=>{
