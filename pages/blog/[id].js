@@ -21,7 +21,7 @@ export const getStaticPaths=async ()=>{
     
     const paths=data?.data.map(post=>{
         return{
-            params:  {id: post._id.toString()}
+            params:  {id: post._id.toString().replace(/\.json/, " ")}
         }
     })
     return {
