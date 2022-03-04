@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 
 
@@ -40,6 +40,14 @@ const EachPost = ({post}) => {
                 .catch((err)=>console.log(err))
             }
         }
+        useEffect(()=>{
+            fetch("https://joshuaizutechs.herokuapp.com/admincp/getpost/"+post._id)
+            .then((res)=>res.json())
+            .then((data)=>{
+                setLikes(data.data.likes);
+            })
+            .catch((err)=>console.log(err))
+        }, [likes])
        
     
     return ( 
