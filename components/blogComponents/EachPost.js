@@ -25,7 +25,7 @@ const EachPost = ({post}) => {
         const isDark=theme?(styles.notVisible):(styles.visible);
         
         
-        const [likes, setLikes]=useState(post.likes)
+        const [likes, setLikes]=useState("")
         const like=()=>{
             let haveLiked=localStorage.getItem("haveLiked");
 
