@@ -1,8 +1,6 @@
 import styles from '../styles/Footer.module.css';
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import CopyrightIcon from "@mui/icons-material/Copyright";
 import CoffeeIcon from "@mui/icons-material/Coffee";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -27,11 +25,11 @@ const Footer = () => {
             </div>
             <div className={styles.footerTxtDiv}>
                 <Typography variant="body1" className={styles.alignCenter}>
-                    Built and designed with love <FavoriteIcon className={styles.love}/>
+                    Built and designed with love <span className={styles.love}> &#x2764; </span>
                     by Joshua Izu
                 </Typography>
                 <Typography variant="body1">
-                    All Rights Reserved  <CopyrightIcon/> 2022
+                    All Rights Reserved &copy; 2022 
 
                 </Typography>
             </div>

@@ -14,7 +14,7 @@ import { useQuery } from 'react-query';
 import axios from 'axios';
 
 const fetchTech=()=>{
-    return axios.get("https://joshuaizutechs.herokuapp.com/admincp/gettech")
+    return axios.get("http://localhost:5000/admincp/gettech")
     
 }
 
@@ -40,7 +40,7 @@ const TechnologyForm = () => {
     const addTech=(e)=>{
         e.preventDefault();
         console.log(localStorage.getItem("jwt"))
-        fetch("https://joshuaizutechs.herokuapp.com/admincp/createtech", 
+        fetch("http://localhost:5000/admincp/createtech", 
         {
             method: "POST",
             headers: {
@@ -66,7 +66,7 @@ const TechnologyForm = () => {
         
         //let confirm=confirm();
         if(confirm("Proceed to delete?")==true){
-        fetch(`https://joshuaizutechs.herokuapp.com/admincp/deletetech/${techId}`, 
+        fetch(`http://localhost:5000/admincp/deletetech/${techId}`, 
         {
             method: "DELETE",
             headers: {
