@@ -18,7 +18,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 
 const fetchWorks=()=>{
-    return axios.get("http://localhost:5000/admincp/getwork")
+    return axios.get("https://joshuaizutechs.herokuapp.com/admincp/getwork")
     
 }
 
@@ -75,7 +75,7 @@ const WorkForm = () => {
     const addWork=(e)=>{
         e.preventDefault();
         console.log(JSON.stringify({workName: work}))
-        fetch("http://localhost:5000/admincp/creatework", 
+        fetch("https://joshuaizutechs.herokuapp.com/admincp/creatework", 
         {
             method: "POST",
             headers: {
@@ -107,7 +107,7 @@ const WorkForm = () => {
     }
     const deleteWork=(workId)=>{
         if(confirm("Proceed to delete?")==true){
-            fetch(`http://localhost:5000/admincp/deletework/${workId}`, 
+            fetch(`https://joshuaizutechs.herokuapp.com/admincp/deletework/${workId}`, 
             {
                 method: "DELETE",
                 headers: {

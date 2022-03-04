@@ -11,7 +11,7 @@ const Visit = () => {
     const [views, setViews]=useState("Loading...");
     useEffect(()=>{
         
-            fetch("http://localhost:5000/page/visit")
+            fetch("https://joshuaizutechs.herokuapp.com/page/visit")
             .then((res)=>res.json())
             .then((data)=>{
                 setViews(data.data.visits)
