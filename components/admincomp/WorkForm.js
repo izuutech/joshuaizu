@@ -112,7 +112,7 @@ const WorkForm = () => {
         })
         .then((res)=>res.json())
         .then((data)=>{
-            alert("Deleted Technology!");
+            alert("Deleted Project!");
         })
         .catch((err)=>alert(err))
         // call delete function then invote refresh on success

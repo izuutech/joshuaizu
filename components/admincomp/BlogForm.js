@@ -91,7 +91,7 @@ const BlogForm = () => {
         })
         .then((res)=>res.json())
         .then((data)=>{
-            alert("Deleted Technology!");
+            alert("Deleted Post!");
         })
         .catch((err)=>alert(err))
         // call delete function then invote refresh on success
