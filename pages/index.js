@@ -14,6 +14,7 @@ import Hello from '../components/Hello'
 import About from '../components/About'
 import Contact from '../components/Contact'
 import Works from '../components/Works'
+import Visit from '../components/Visit'
 import Footer from '../components/Footer'
 
 
@@ -81,6 +82,7 @@ export default function Home() {
         <div className="sWorks">
           <Works/>
         </div>
+        <Visit />
         <Footer />
       </div>
     <ReactQueryDevtools initialIsOpen={false} position='bottom-right'/>

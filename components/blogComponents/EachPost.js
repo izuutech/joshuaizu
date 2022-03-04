@@ -2,7 +2,7 @@ import styles from '../../styles/Blog.module.css';
 import Container from "@mui/material/Container";
 import Link from 'next/link'
 import Typography from "@mui/material/Typography";
-import CoffeeIcon from "@mui/icons-material/Coffee";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import {useState} from 'react';
@@ -23,8 +23,21 @@ const EachPost = ({post}) => {
         const postHeadTheme=theme?(styles.postHead):(styles.offPostHead);
         const isLight=theme?(styles.visible):(styles.notVisible);
         const isDark=theme?(styles.notVisible):(styles.visible);
-        const buyCoffee=()=>{
-            window.location.href="https://www.buymeacoffee.com/joshuaizu"
+        
+        
+        const [likes, setLikes]=useState(post.likes)
+        const like=()=>{
+            let haveLiked=localStorage.getItem("haveLiked");
+
+            if(haveLiked!="true"){
+                fetch("https://joshuaizutechs.herokuapp.com/admincp/likepost/"+post._id)
+                .then((res)=>res.json())
+                .then((data)=>{
+                    setLikes(data.data.likes);
+                    localStorage.setItem("haveLiked", "true")
+                })
+                .catch((err)=>console.log(err))
+            }
         }
 
     
@@ -49,9 +62,10 @@ const EachPost = ({post}) => {
                         <div className={blueTheme}>
                         <div className={postHeadTheme}>
                             <Typography variant="h5" className={styles.title}>
-                                {post.title}
+                                {post.title}<br/>
+                                <Typography variant="body2">{likes} like(s)</Typography>
                             </Typography>
-                            <CoffeeIcon className={styles.titleShare} onClick={buyCoffee}/>
+                            <ThumbUpIcon className={styles.titleShare} onClick={like}/>
                         </div>
                         <div className={styles.postDown}>
                             <Typography variant="body1">

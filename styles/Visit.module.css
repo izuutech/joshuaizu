@@ -1,0 +1,19 @@
+.visit{
+    background-color: #233554;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.viewsDiv{
+    text-align: center;
+    border: 1px #64ffda solid;
+    padding: 15px;
+    width: 80%;
+    border-style: dashed;
+}
+
+.txtcolor{
+    color: #64ffda;
+}
