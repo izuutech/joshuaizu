@@ -47,6 +47,7 @@ const LoginForm = () => {
                 color="secondary"
                 fullWidth
                 required
+                type="password"
                 onChange={onPass}/>
                  <Button 
                     type="submit"
