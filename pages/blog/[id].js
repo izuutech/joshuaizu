@@ -14,24 +14,24 @@ import HomeIcon from "@mui/icons-material/Home";
 
 
 
-// export const getStaticPaths=async ()=>{
-//     const res=await fetch(`https://joshuaizutechs.herokuapp.com/admincp/getpost`);
-//     const data=await res.json();
+export const getStaticPaths=async ()=>{
+    const res=await fetch(`https://joshuaizutechs.herokuapp.com/admincp/getpost`);
+    const data=await res.json();
 
     
-//     const paths=data?.data.map(post=>{
-//         return{
-//             params:  {id: post._id.toString().replace(/\.json/, "")}
-//         }
-//     })
-//     return {
-//         paths,
-//         fallback: false
-//     }
-// }
+    const paths=data?.data.map(post=>{
+        return{
+            params:  {id: post._id.toString().replace(/\.json/, "")}
+        }
+    })
+    return {
+        paths,
+        fallback: "blocking"
+    }
+}
 
 
-export const getServerSideProps=async (context)=>{
+export const getStaticProps=async (context)=>{
     
     const id=context.params.id;
     const res=await fetch("https://joshuaizutechs.herokuapp.com/admincp/getpost/"+id);
@@ -39,7 +39,8 @@ export const getServerSideProps=async (context)=>{
     const data=await res.json();
     
     return{
-        props: {post: data.data}
+        props: {post: data.data},
+        revalidate: 2
     }
 }
 
