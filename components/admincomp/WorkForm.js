@@ -18,7 +18,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 
 const fetchWorks=()=>{
-    return axios.get("https://joshuaizutechs.herokuapp.com/admincp/getwork")
+    return axios.get("http://localhost:5000/admincp/getwork")
     
 }
 
@@ -75,7 +75,7 @@ const WorkForm = () => {
     const addWork=(e)=>{
         e.preventDefault();
         console.log(JSON.stringify({workName: work}))
-        fetch("https://joshuaizutechs.herokuapp.com/admincp/creatework", 
+        fetch("http://localhost:5000/admincp/creatework", 
         {
             method: "POST",
             headers: {
@@ -101,22 +101,27 @@ const WorkForm = () => {
             .catch((err)=>alert(err))
     }
     const deleteWork=(workId)=>{
-
-        fetch(`https://joshuaizutechs.herokuapp.com/admincp/deletework/${workId}`, 
-        {
-            method: "DELETE",
-            headers: {
-                "Content-type": "application/json",
-                "Authorization": jwt
-            }
-        })
-        .then((res)=>res.json())
-        .then((data)=>{
-            alert("Deleted Project!");
-        })
-        .catch((err)=>alert(err))
+        if(confirm("Proceed to delete?")==true){
+            fetch(`http://localhost:5000/admincp/deletework/${workId}`, 
+            {
+                method: "DELETE",
+                headers: {
+                    "Content-type": "application/json",
+                    "Authorization": jwt
+                }
+            })
+            .then((res)=>res.json())
+            .then((data)=>{
+                if(data.error){
+                    alert(data.error)
+                }else{
+                    alert("Deleted Project!");
+                }
+            })
+            .catch((err)=>alert(err))
         // call delete function then invote refresh on success
         //()=>setRefresh(!refresh)
+        }
     }
 
 

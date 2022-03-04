@@ -27,21 +27,21 @@ const EachPost = ({post}) => {
         
         const [likes, setLikes]=useState("")
         const like=()=>{
-            let haveLiked=localStorage.getItem("haveLiked");
+            let haveLiked=localStorage.getItem(`${post._id}`);
 
             if(haveLiked!="true"){
-                fetch("https://joshuaizutechs.herokuapp.com/admincp/likepost/"+post._id)
+                fetch("http://localhost:5000/admincp/likepost/"+post._id)
                 .then((res)=>res.json())
                 .then((data)=>{
                     setLikes(data.data.likes);
-                    localStorage.setItem("haveLiked", "true")
+                    localStorage.setItem(`${post._id}`, "true")
                     alert("You liked the post");
                 })
                 .catch((err)=>console.log(err))
             }
         }
         useEffect(()=>{
-            fetch("https://joshuaizutechs.herokuapp.com/admincp/getpost/"+post._id)
+            fetch("http://localhost:5000/admincp/getpost/"+post._id)
             .then((res)=>res.json())
             .then((data)=>{
                 setLikes(data.data.likes);

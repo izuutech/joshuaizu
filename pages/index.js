@@ -56,6 +56,7 @@ export default function Home() {
           smooth: "easeInOutQuart"
       })
   }
+  
   return (
     <QueryClientProvider client={queryClient}>
       <div>
@@ -72,7 +73,7 @@ export default function Home() {
             </Toolbar>
         </AppBar>
             
-        <Hello />
+        <Hello scrollContact={goToContact}/>
         <div className="sAbout">
           <About/>
         </div>

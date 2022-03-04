@@ -14,7 +14,11 @@ import { useState, useEffect } from 'react';
 //     toolbar: theme.mixins.toolbar
 //     }
 // })
-const Hello = () => {
+const Hello = ({scrollContact}) => {
+    //console.log(scrollContact())
+    // const arrowScroll=()=>{
+
+    // }
     // const classes=useStyles();
     const [blink, setBlink]=useState(true);
     useEffect(()=>{
@@ -47,10 +51,10 @@ const Hello = () => {
                     </div>
                 </Container>
                 <div className={styles.circleContainer}>
-                <div className={styles.circleDiv}>
-                    <ExpandMoreIcon className={styles.arroww} fontSize="large"/>
-                    <ExpandMoreIcon className={styles.arroww} fontSize="large"/>
-                    <ExpandMoreIcon className={styles.arroww} fontSize="large"/>
+                <div className={styles.circleDiv} onClick={scrollContact}>
+                    <ExpandMoreIcon className={styles.arroww} fontSize="large" />
+                    <ExpandMoreIcon className={styles.arroww} fontSize="large" />
+                    <ExpandMoreIcon className={styles.arroww} fontSize="large" />
                 </div>
                 </div>
 

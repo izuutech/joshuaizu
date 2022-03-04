@@ -14,7 +14,7 @@ import { useQuery } from 'react-query';
 import axios from 'axios';
 
 const fetchTech=()=>{
-    return axios.get("https://joshuaizutechs.herokuapp.com/admincp/gettech")
+    return axios.get("http://localhost:5000/admincp/gettech")
     
 }
 
@@ -40,7 +40,7 @@ const TechnologyForm = () => {
     const addTech=(e)=>{
         e.preventDefault();
         console.log(localStorage.getItem("jwt"))
-        fetch("https://joshuaizutechs.herokuapp.com/admincp/createtech", 
+        fetch("http://localhost:5000/admincp/createtech", 
         {
             method: "POST",
             headers: {
@@ -59,8 +59,9 @@ const TechnologyForm = () => {
     }
     const deleteTech=(techId)=>{
         
-        
-        fetch(`https://joshuaizutechs.herokuapp.com/admincp/deletetech/${techId}`, 
+        //let confirm=confirm();
+        if(confirm("Proceed to delete?")==true){
+        fetch(`http://localhost:5000/admincp/deletetech/${techId}`, 
         {
             method: "DELETE",
             headers: {
@@ -70,12 +71,17 @@ const TechnologyForm = () => {
         })
         .then((res)=>res.json())
         .then((data)=>{
-            alert("Deleted Technology!");
+            if(data.error){
+                alert(data.error)
+            }else{
+                alert("Deleted Technology!");
+            }
         })
         .catch((err)=>alert(err))
         
         // call delete function then invote refresh on success
         //()=>setRefresh(!refresh)
+    }
     }
 
 

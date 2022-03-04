@@ -15,9 +15,9 @@ class UserContextProvider extends Component{
     //for login
     login=(password)=>{
         
-        console.log(password);
+        // console.log(password);
         
-        fetch("https://joshuaizutechs.herokuapp.com/admincp/login", 
+        fetch("http://localhost:5000/admincp/login", 
         {
             method: "POST",
             headers: {
@@ -29,7 +29,7 @@ class UserContextProvider extends Component{
         .then(res=>res.json())
         .then((data)=>{
             if(data.user){
-            console.log(data.user)
+            // console.log(data.user)
             
             
             this.setState({

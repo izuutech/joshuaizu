@@ -22,7 +22,7 @@
     color: #ccd6f6;
 }
 .containerBody{
-    padding-top: 10px;
+    padding-top: 30px;
     width: 90%;
     margin-left: 5%;
     text-align: center;
@@ -30,7 +30,7 @@
     background-color: #112240;
 }
 .contactSpace{
-    padding: 60px 20px 20px 10px;
+    padding: 10px 20px 20px 10px;
 }
 
 .btn{

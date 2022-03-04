@@ -18,7 +18,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 
 const fetchWorks=()=>{
-    return axios.get("https://joshuaizutechs.herokuapp.com/admincp/getpost")
+    return axios.get("http://localhost:5000/admincp/getpost")
     
 }
 
@@ -59,7 +59,7 @@ const BlogForm = () => {
     const addPost=(e)=>{
         e.preventDefault();
         console.log(JSON.stringify({title: title}))
-        fetch("https://joshuaizutechs.herokuapp.com/admincp/createpost", 
+        fetch("http://localhost:5000/admincp/createpost", 
         {
             method: "POST",
             headers: {
@@ -80,22 +80,27 @@ const BlogForm = () => {
             .catch((err)=>alert(err))
     }
     const deletePost=(postId)=>{
-        
-        fetch(`https://joshuaizutechs.herokuapp.com/admincp/deletepost/${postId}`, 
-        {
-            method: "DELETE",
-            headers: {
-                "Content-type": "application/json",
-                "Authorization": jwt
-            }
-        })
-        .then((res)=>res.json())
-        .then((data)=>{
-            alert("Deleted Post!");
-        })
-        .catch((err)=>alert(err))
+        if(confirm("Proceed to delete?")==true){
+            fetch(`http://localhost:5000/admincp/deletepost/${postId}`, 
+            {
+                method: "DELETE",
+                headers: {
+                    "Content-type": "application/json",
+                    "Authorization": jwt
+                }
+            })
+            .then((res)=>res.json())
+            .then((data)=>{
+                if(data.error){
+                    alert(data.error)
+                }else{
+                    alert("Deleted Post!");
+                }
+            })
+            .catch((err)=>alert(err))
         // call delete function then invote refresh on success
         //()=>setRefresh(!refresh)
+        }
     }
 
 

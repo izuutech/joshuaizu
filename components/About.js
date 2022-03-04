@@ -13,7 +13,7 @@ import axios from 'axios';
 
 
 const fetchTech=()=>{
-    return axios.get("https://joshuaizutechs.herokuapp.com/admincp/gettech")
+    return axios.get("http://localhost:5000/admincp/gettech")
     
 }
 
@@ -74,7 +74,7 @@ const About = () => {
                         )}
                         {status === "success" && (
                         allTech?.data?.data.map(tech=>(
-                                    <ListItemButton key={tech._id}>
+                                    <ListItemButton key={tech._id} className={styles.listDiv}>
                                     <ListItemAvatar>
                                         <Avatar 
                                         className={styles.avatarCircle}

@@ -20,7 +20,7 @@ const Contact = () => {
                 <Typography variant="h4" className={styles.contactHeadTxt}>/contact me</Typography>
             </div>
             <div className={styles.containerBody}>
-            <Typography variant="h5" className={styles.contactHeadTxt}>What Can I Do For You?</Typography>
+            <Typography variant="h6" className={styles.contactHeadTxt}>What Can I Do For You?</Typography>
             <div className={styles.contactSpace}>
             <Typography variant="body1" className={styles.contactHeadTxt}>
             You can contact me via TikTok @iam_izuuranking. Alternatively, you can click the button below to reach me via email

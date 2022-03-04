@@ -63,12 +63,28 @@
 }
 .technologyBody{
     color: #ccd6f6;
+    width: 100%;
+    
 }
+
 .avatarCircle{
     background-color: #64ffda;
     color: #233554;
 }
 
+@media screen and (min-width: 400px) {
+    .technologyBody{
+        color: #ccd6f6;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .listDiv{
+        width: 48%;
+    }
+}
 
 @media screen and (max-width: 700px) {
     .containerBody{
