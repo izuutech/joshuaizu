@@ -72,10 +72,15 @@ const BlogForm = () => {
                 likes: 7
             })
         })
-        .then(()=>{
-            alert("Added Post!");
-            setTitle("");
-            setContent("");
+        .then(res=>res.json())
+        .then((data)=>{
+            if(data.error){
+                alert(data.error);
+            }else{
+                alert("Added Post!");
+                setTitle("");
+                setContent("");
+            }
         })
             .catch((err)=>alert(err))
     }

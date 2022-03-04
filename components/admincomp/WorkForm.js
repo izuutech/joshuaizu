@@ -91,12 +91,16 @@ const WorkForm = () => {
             })
         })
         .then(()=>{
-            alert("Added Work!");
-            setWork("");
-            setWorkDesc("");
-            setWorkLang("");
-            setWorkGit("");
-            setWorkLink("");
+            if(data.error){
+                alert(data.error);
+            }else{
+                alert("Added Work!");
+                setWork("");
+                setWorkDesc("");
+                setWorkLang("");
+                setWorkGit("");
+                setWorkLink("");
+            }
         })
             .catch((err)=>alert(err))
     }

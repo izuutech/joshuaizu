@@ -51,9 +51,14 @@ const TechnologyForm = () => {
         })
         .then((res)=>res.json())
         .then((data)=>{
-            console.log(data)
-            alert("Added Technology!");
-            setTech("");
+            if(data.error){
+                alert(data.error);
+            }else{
+                
+                alert("Added Technology!");
+                setTech("");
+            }
+            
         })
         .catch((err)=>alert(err))
     }
