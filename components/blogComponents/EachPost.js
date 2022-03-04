@@ -39,14 +39,7 @@ const EachPost = ({post}) => {
                 .catch((err)=>console.log(err))
             }
         }
-        useEffect(()=>{
-            fetch("https://joshuaizutechs.herokuapp.com/admincp/getpost/"+post._id)
-                .then((res)=>res.json())
-                .then((data)=>{
-                    setLikes(data.data.likes);
-                })
-                .catch((err)=>console.log(err))
-        }, [likes])
+       
     
     return ( 
         <div className={styles.container}>
