@@ -35,6 +35,7 @@ const EachPost = ({post}) => {
                 .then((data)=>{
                     setLikes(data.data.likes);
                     localStorage.setItem("haveLiked", "true")
+                    alert("You liked the post");
                 })
                 .catch((err)=>console.log(err))
             }
