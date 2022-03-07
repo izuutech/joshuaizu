@@ -114,6 +114,40 @@
 }
 
 
+.paginateDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+}
+.offA{
+    text-decoration: none;
+    color: #64ffda;
+}
+.paginate{
+    display: flex;
+    border: 1px solid #64ffdbaf;
+    color: #64ffda;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+/* .next{
+    display: flex;
+    border: 1px solid #64ffdbaf;
+    color: #64ffda;
+    width: 40%;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+} */
+
+.paginate:hover{
+    border-color: #64ffda;
+}
 
 
 @media screen and (max-width: 700px) {

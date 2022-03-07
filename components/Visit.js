@@ -11,7 +11,7 @@ const Visit = () => {
     const [views, setViews]=useState("Loading...");
     useEffect(()=>{
         
-            fetch("https://joshuaizutechs.herokuapp.com/page/visit")
+            fetch("https://joshuaizu.vercel.app/page/visit")
             .then((res)=>res.json())
             .then((data)=>{
                 setViews(data.data.visits)
