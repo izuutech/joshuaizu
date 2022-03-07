@@ -12,9 +12,9 @@ import {useEffect, useState} from 'react';
 
 const fetchPosts=(pageNo)=>{
     if(pageNo){
-        return axios.get(`https://joshuaizutechs.herokuapp.com/admincp/getpost/users?page=${pageNo}`)
+        return axios.get(`http://localhost:5000/admincp/getpost/users?page=${pageNo}`)
     }else{
-        return axios.get(`https://joshuaizutechs.herokuapp.com/admincp/getpost/users?page=1`)
+        return axios.get(`http://localhost:5000/admincp/getpost/users?page=1`)
     }
 }
 
