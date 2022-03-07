@@ -12,16 +12,16 @@ import {useEffect, useState} from 'react';
 
 const fetchPosts=(pageNo)=>{
     if(pageNo){
-        return axios.get(`https://joshuaizu.vercel.app/admincp/getpost/users?page=${pageNo}`)
+        return axios.get(`https://joshuaizutechs.herokuapp.com/admincp/getpost/users?page=${pageNo}`)
     }else{
-        return axios.get(`https://joshuaizu.vercel.app/admincp/getpost/users?page=1`)
+        return axios.get(`https://joshuaizutechs.herokuapp.com/admincp/getpost/users?page=1`)
     }
 }
 // const fetchPosts=(pageNo)=>{
 //     if(pageNo){
-//         return axios.get(`https://joshuaizu.vercel.app/admincp/getpost/users?page=${pageNo}`)
+//         return axios.get(`https://joshuaizutechs.herokuapp.com/admincp/getpost/users?page=${pageNo}`)
 //     }else{
-//         return axios.get(`https://joshuaizu.vercel.app/admincp/getpost/users?page=1`)
+//         return axios.get(`https://joshuaizutechs.herokuapp.com/admincp/getpost/users?page=1`)
 //     }
 // }
 
@@ -88,26 +88,20 @@ const Blog = () => {
                     
                 </div>
 
-                {/* Page Pagination */}
-                <div className={styles.paginateDiv}>
-                   
-                        {/* {posts?.data?.prevPage&&(
-                        <div className={styles.prev}><Link href={`/admincp/getpost/users?page=${posts.data.prevPage}`}><a className={styles.offA}>Prev</a></Link></div>
+              
+                
+            </Container>
+              {/* Page Pagination */}
+            <div className={styles.paginateDiv}>
+                    <ButtonGroup>
+                        {posts?.data?.prevPage&&(
+                            <Button onClick={()=>setPageNo(pageNo-=1)} className={styles.paginate}>Prev</Button>
                         )}
                         {posts?.data?.nextPage&&(
-                        <div className={styles.next}><Link href={`/admincp/getpost/users?page=${posts.data.nextPage}`}><a className={styles.offA}>Next</a></Link></div>
-                        )} */}
-
-                        <ButtonGroup>
-                            {posts?.data?.prevPage&&(
-                                <Button onClick={()=>setPageNo(pageNo-=1)} className={styles.paginate}>Prev</Button>
-                            )}
-                            {posts?.data?.nextPage&&(
-                                <Button onClick={()=>setPageNo(pageNo+=1)} className={styles.paginate}>Next</Button>
-                            )}
-                        </ButtonGroup>
+                            <Button onClick={()=>setPageNo(pageNo+=1)} className={styles.paginate}>Next</Button>
+                        )}
+                    </ButtonGroup>
                 </div>
-            </Container>
         </div>
 
      );
