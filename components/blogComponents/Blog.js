@@ -17,13 +17,7 @@ const fetchPosts=(pageNo)=>{
         return axios.get(`https://joshuaizutechs.herokuapp.com/admincp/getpost/users?page=1`)
     }
 }
-// const fetchPosts=(pageNo)=>{
-//     if(pageNo){
-//         return axios.get(`https://joshuaizutechs.herokuapp.com/admincp/getpost/users?page=${pageNo}`)
-//     }else{
-//         return axios.get(`https://joshuaizutechs.herokuapp.com/admincp/getpost/users?page=1`)
-//     }
-// }
+
 
 
 const Blog = () => {
@@ -75,7 +69,7 @@ const Blog = () => {
                                         
 
                                         {/* output a part of the string (the first 1000 characters) */}
-                                    {post.content.substring(0, 200)}
+                                    {`${post.content.substring(0, 200).split("<br>")}...`}
                                     </Typography>
                                 </div>
                                 </div>

@@ -51,7 +51,10 @@ const EachPost = ({post}) => {
             .catch((err)=>console.log(err))
         }, [likes])
        
-    
+        
+       
+        const lineBreaks=post.content.split("<br>");
+        
     return ( 
         <div className={styles.container}>
             
@@ -81,7 +84,14 @@ const EachPost = ({post}) => {
                         <div className={styles.postDown}>
                             <Typography variant="body1">
                                 {/* once you see <br> create new line */}
-                                {post.content}
+                                {
+                                    lineBreaks.map(lineBreak=>(
+                                       <div>
+                                            {lineBreak}<br/><br/>
+                                       </div> 
+                                      
+                                    ))
+                                }
                             </Typography>
                         </div>
                         </div>
