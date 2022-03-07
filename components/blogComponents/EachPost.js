@@ -54,7 +54,7 @@ const EachPost = ({post}) => {
         
        
         const lineBreaks=post.content.split("<br>");
-        
+        console.log(lineBreaks)
     return ( 
         <div className={styles.container}>
             
