@@ -87,7 +87,7 @@ const EachPost = ({post}) => {
                                 {/* once you see <br> create new line */}
                                 {
                                     lineBreaks.map(lineBreak=>(
-                                       <div>
+                                       <div key={indexOf(lineBreak)}>
                                             {lineBreak}<br/><br/>
                                        </div> 
                                       
