@@ -11,7 +11,7 @@ const Visit = () => {
     const [views, setViews]=useState("Loading...");
     useEffect(()=>{
         
-            fetch("https://joshuaizu.vercel.app/page/visit")
+            fetch("http://localhost:5000/page/visit")
             .then((res)=>res.json())
             .then((data)=>{
                 setViews(data.data.visits)

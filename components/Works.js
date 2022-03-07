@@ -10,7 +10,7 @@ import {useQuery} from 'react-query';
 
 
 const fetchWorks=()=>{
-    return axios.get("https://joshuaizu.vercel.app/admincp/getwork")
+    return axios.get("http://localhost:5000/admincp/getwork")
     
 }
 
