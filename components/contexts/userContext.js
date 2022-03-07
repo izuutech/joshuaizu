@@ -17,7 +17,7 @@ class UserContextProvider extends Component{
         
         // console.log(password);
         
-        fetch("http://localhost:5000/admincp/login", 
+        fetch("https://joshuaizu.vercel.app/admincp/login", 
         {
             method: "POST",
             headers: {

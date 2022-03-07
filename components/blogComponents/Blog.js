@@ -12,16 +12,16 @@ import {useEffect, useState} from 'react';
 
 const fetchPosts=(pageNo)=>{
     if(pageNo){
-        return axios.get(`http://localhost:5000/admincp/getpost/users?page=${pageNo}`)
+        return axios.get(`https://joshuaizu.vercel.app/admincp/getpost/users?page=${pageNo}`)
     }else{
-        return axios.get(`http://localhost:5000/admincp/getpost/users?page=1`)
+        return axios.get(`https://joshuaizu.vercel.app/admincp/getpost/users?page=1`)
     }
 }
 // const fetchPosts=(pageNo)=>{
 //     if(pageNo){
-//         return axios.get(`http://localhost:5000/admincp/getpost/users?page=${pageNo}`)
+//         return axios.get(`https://joshuaizu.vercel.app/admincp/getpost/users?page=${pageNo}`)
 //     }else{
-//         return axios.get(`http://localhost:5000/admincp/getpost/users?page=1`)
+//         return axios.get(`https://joshuaizu.vercel.app/admincp/getpost/users?page=1`)
 //     }
 // }
 

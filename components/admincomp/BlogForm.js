@@ -18,7 +18,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 
 const fetchWorks=()=>{
-    return axios.get("http://localhost:5000/admincp/getpost")
+    return axios.get("https://joshuaizu.vercel.app/admincp/getpost")
     
 }
 
@@ -59,7 +59,7 @@ const BlogForm = () => {
     const addPost=(e)=>{
         e.preventDefault();
         console.log(JSON.stringify({title: title}))
-        fetch("http://localhost:5000/admincp/createpost", 
+        fetch("https://joshuaizu.vercel.app/admincp/createpost", 
         {
             method: "POST",
             headers: {
@@ -86,7 +86,7 @@ const BlogForm = () => {
     }
     const deletePost=(postId)=>{
         if(confirm("Proceed to delete?")==true){
-            fetch(`http://localhost:5000/admincp/deletepost/${postId}`, 
+            fetch(`https://joshuaizu.vercel.app/admincp/deletepost/${postId}`, 
             {
                 method: "DELETE",
                 headers: {
