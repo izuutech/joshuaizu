@@ -15,7 +15,6 @@ import {useState, useEffect} from 'react';
 const EachPost = ({post}) => {
     
     const lineBreaks=post.content.split("<br>");
-    console.log(lineBreaks)
     const [theme, setTheme]=useState(true)
         const toggleTheme=()=>{
             setTheme(!theme)
