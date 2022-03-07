@@ -30,7 +30,7 @@ const EachPost = ({post}) => {
             let haveLiked=localStorage.getItem(`${post._id}`);
 
             if(haveLiked!="true"){
-                fetch("http://localhost:5000/admincp/likepost/"+post._id)
+                fetch("https://joshuaizutechs.herokuapp.com/admincp/likepost/"+post._id)
                 .then((res)=>res.json())
                 .then((data)=>{
                     setLikes(data.data.likes);
@@ -43,7 +43,7 @@ const EachPost = ({post}) => {
             }
         }
         useEffect(()=>{
-            fetch("http://localhost:5000/admincp/getpost/"+post._id)
+            fetch("https://joshuaizutechs.herokuapp.com/admincp/getpost/"+post._id)
             .then((res)=>res.json())
             .then((data)=>{
                 setLikes(data.data.likes);
