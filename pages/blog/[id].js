@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import EachPost from "../../components/blogComponents/EachPost"
 // import useSWR from "swr";
 

@@ -10,9 +10,6 @@ export default class MyDocument extends Document {
 			<Html lang="en">
 				<Head>
 				
-					<title>Joshua Izu</title>
-					<meta name="description" content="My Portfolio Website" />
-					<link rel="icon" href="/favicon.ico" />	
       
 {/* Inject MUI styles first to match with the prepend: true configuration. */}
 					{this.props.emotionStyleTags}

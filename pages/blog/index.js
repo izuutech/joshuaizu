@@ -1,4 +1,4 @@
-
+import Head from 'next/head'
 import { QueryClientProvider, QueryClient} from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import Blog from '../../components/blogComponents/Blog';
