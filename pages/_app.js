@@ -22,6 +22,9 @@ export default function MyApp(props) {
 			<Head>
 				<meta name="viewport"
 					content="initial-scale=1, width=device-width" />
+				<title>Joshua Izu</title>
+				<meta name="description" content="My Portfolio Website" />
+				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			
 				

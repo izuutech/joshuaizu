@@ -59,6 +59,11 @@ export default function Home() {
   
   return (
     <QueryClientProvider client={queryClient}>
+      <Head>
+        <title>Joshua Izu</title>
+        <meta name="description" content="My Portfolio Website" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div>
         <AppBar position="static" className={styles.appbar}>
             <Toolbar>

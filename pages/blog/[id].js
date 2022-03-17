@@ -61,6 +61,11 @@ const Post = ({post}) => {
 
     return ( 
         <>
+        <Head>
+        <title>Joshua Izu</title>
+        <meta name="description" content="My Portfolio Website" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
         <AppBar position="static" className={styles.appbar}>
             <Toolbar>
                 <ButtonGroup variant='text' className={styles.buttonGroup}>
