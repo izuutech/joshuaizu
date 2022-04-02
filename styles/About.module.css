@@ -61,7 +61,7 @@
     border: solid 2px #64ffda;
     border-radius: 50%;
     overflow: hidden;
-}
+} 
 .aboutme{
     width: 65%;
 }
@@ -111,6 +111,11 @@
     .myImage{
         width: 50vw;
         height: 50vw;
+    }
+    .myImage:hover{
+        width: 50vw;
+        height: 50vw;
+        border-radius: 50%;
     }
     .aboutme{
         width: 100%;
