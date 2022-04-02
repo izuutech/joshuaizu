@@ -71,8 +71,8 @@ const BlogForm = () => {
       })
       .catch((err) => alert(err));
   };
-  const deletePost = (postId) => {
-    if (confirm("Proceed to delete?") == true) {
+  const deletePost = (postId, postTitle) => {
+    if (confirm(`Proceed to remove ${postTitle}?`) == true) {
       fetch(`https://joshuaizutechs.herokuapp.com/admincp/deletepost/${postId}`, {
         method: "DELETE",
         headers: {
@@ -131,7 +131,7 @@ const BlogForm = () => {
             {allBlogs?.data?.data.map((post) => (
               <ListItemButton key={post._id}>
                 <ListItemAvatar>
-                  <Avatar onClick={() => deletePost(post._id)}>
+                  <Avatar onClick={() => deletePost(post._id, post.title)}>
                     <DeleteIcon />
                   </Avatar>
                 </ListItemAvatar>
