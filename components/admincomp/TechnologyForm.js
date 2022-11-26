@@ -12,9 +12,10 @@ import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../contexts/userContext";
 import { useQuery } from "react-query";
 import axios from "axios";
+import { BACKEND_URI } from "../../contants";
 
 const fetchTech = () => {
-  return axios.get("https://joshuaizutechs.herokuapp.com/admincp/gettech");
+  return axios.get(`${BACKEND_URI}/admincp/gettech`);
 };
 
 const TechnologyForm = () => {
@@ -35,7 +36,7 @@ const TechnologyForm = () => {
   const addTech = (e) => {
     e.preventDefault();
     // console.log(localStorage.getItem("jwt"));
-    fetch("https://joshuaizutechs.herokuapp.com/admincp/createtech", {
+    fetch(`${BACKEND_URI}/admincp/createtech`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -57,7 +58,7 @@ const TechnologyForm = () => {
   const deleteTech = (techId) => {
     //let confirm=confirm();
     if (confirm("Proceed to delete?") == true) {
-      fetch(`https://joshuaizutechs.herokuapp.com/admincp/deletetech/${techId}`, {
+      fetch(`${BACKEND_URI}/admincp/deletetech/${techId}`, {
         method: "DELETE",
         headers: {
           "Content-type": "application/json",

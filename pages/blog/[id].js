@@ -10,9 +10,10 @@ import NewspaperIcon from "@mui/icons-material/Newspaper";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import HomeIcon from "@mui/icons-material/Home";
+import { BACKEND_URI } from "../../contants";
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`https://joshuaizutechs.herokuapp.com/admincp/getpost`);
+  const res = await fetch(`${BACKEND_URI}/admincp/getpost`);
   const data = await res.json();
 
   const paths = data?.data.map((post) => {
@@ -28,7 +29,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await fetch("https://joshuaizutechs.herokuapp.com/admincp/getpost/" + id);
+  const res = await fetch(`${BACKEND_URI}/admincp/getpost/${id}`);
 
   const data = await res.json();
 

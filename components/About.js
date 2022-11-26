@@ -10,14 +10,15 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import { useQuery } from "react-query";
 import axios from "axios";
+import { BACKEND_URI } from "../contants";
 
 const fetchTech = () => {
-  return axios.get("https://joshuaizutechs.herokuapp.com/admincp/gettech");
+  return axios.get(`${BACKEND_URI}/admincp/gettech`);
 };
 
 const About = () => {
   const { data: allTech, status } = useQuery("get-tech", fetchTech);
-  
+
   return (
     <div className={styles.about}>
       <Container>

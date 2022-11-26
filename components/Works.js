@@ -6,9 +6,10 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkIcon from "@mui/icons-material/Link";
 import axios from "axios";
 import { useQuery } from "react-query";
+import { BACKEND_URI } from "../contants";
 
 const fetchWorks = () => {
-  return axios.get("https://joshuaizutechs.herokuapp.com/admincp/getwork");
+  return axios.get(`${BACKEND_URI}/admincp/getwork`);
 };
 
 const Works = () => {
@@ -81,11 +82,11 @@ const Works = () => {
                     <a href={work.github} className={styles.aTagWorks}>
                       <GitHubIcon className={styles.greyIcon} />
                     </a>
-                    {work.link&&
-                    <a href={work.link} className={styles.aTagWorks}>
-                      <LinkIcon className={styles.greyIcon} />
-                    </a>
-                    }
+                    {work.link && (
+                      <a href={work.link} className={styles.aTagWorks}>
+                        <LinkIcon className={styles.greyIcon} />
+                      </a>
+                    )}
                   </div>
                 </div>
                 <Typography variant="h6">{work.name}</Typography>

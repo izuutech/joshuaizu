@@ -13,9 +13,10 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { BACKEND_URI } from "../../contants";
 
 const fetchWorks = () => {
-  return axios.get("https://joshuaizutechs.herokuapp.com/admincp/getwork");
+  return axios.get(`${BACKEND_URI}/admincp/getwork`);
 };
 
 const queryClient = new QueryClient();
@@ -60,8 +61,8 @@ const WorkForm = () => {
 
   const addWork = (e) => {
     e.preventDefault();
-    
-    fetch("https://joshuaizutechs.herokuapp.com/admincp/creatework", {
+
+    fetch(`${BACKEND_URI}/admincp/creatework`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -92,7 +93,7 @@ const WorkForm = () => {
   };
   const deleteWork = (workId) => {
     if (confirm("Proceed to delete?") == true) {
-      fetch(`https://joshuaizutechs.herokuapp.com/admincp/deletework/${workId}`, {
+      fetch(`${BACKEND_URI}/admincp/deletework/${workId}`, {
         method: "DELETE",
         headers: {
           "Content-type": "application/json",
@@ -178,7 +179,7 @@ const WorkForm = () => {
               Add Project
             </Button>
           </form>
-          <List >
+          <List>
             {allWorks?.data?.data.map((work) => (
               <ListItemButton key={work._id}>
                 <ListItemAvatar>

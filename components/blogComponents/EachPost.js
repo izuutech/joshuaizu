@@ -1,24 +1,22 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import parse from 'html-react-parser';
-import {format} from 'date-fns';
+import parse from "html-react-parser";
+import { format } from "date-fns";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 
-
 import styles from "../../styles/Blog.module.css";
-
+import { BACKEND_URI } from "../../contants";
 
 const EachPost = ({ post }) => {
-  const createdAt=post?.createdAt;
-  const postDate=format(new Date(createdAt), 'do MMMM, yyyy');
+  const createdAt = post?.createdAt;
+  const postDate = format(new Date(createdAt), "do MMMM, yyyy");
 
   const lineBreaks = post.content.split("<br>");
-  
-  
+
   const [theme, setTheme] = useState(true);
   const toggleTheme = () => {
     setTheme(!theme);
@@ -34,7 +32,7 @@ const EachPost = ({ post }) => {
     let haveLiked = localStorage.getItem(`${post._id}`);
 
     if (haveLiked != "true") {
-      fetch("https://joshuaizutechs.herokuapp.com/admincp/likepost/" + post._id)
+      fetch(`${BACKEND_URI}/likepost/` + post._id)
         .then((res) => res.json())
         .then((data) => {
           setLikes(data.data.likes);
@@ -47,7 +45,7 @@ const EachPost = ({ post }) => {
     }
   };
   useEffect(() => {
-    fetch("https://joshuaizutechs.herokuapp.com/admincp/getpost/" + post._id)
+    fetch(`${BACKEND_URI}/admincp/getpost/${post._id}`)
       .then((res) => res.json())
       .then((data) => {
         setLikes(data.data.likes);
@@ -79,27 +77,25 @@ const EachPost = ({ post }) => {
                   {post.title}
                   <br />
                   <Typography variant="body2">{likes} like(s)</Typography>
-                  <Typography variant="body2" >Published on {postDate}</Typography>
+                  <Typography variant="body2">
+                    Published on {postDate}
+                  </Typography>
                 </Typography>
                 <ThumbUpIcon className={styles.titleShare} onClick={like} />
               </div>
               <div className={styles.postDown}>
                 <Typography variant="body1" className={styles.postBody}>
                   {/* once you see <br> create new line */}
-                  {
-                  lineBreaks?.map((lineBreak) => (
+                  {lineBreaks?.map((lineBreak) => (
                     <span key={lineBreaks.indexOf(lineBreak)}>
                       {/* parse will render with html */}
-                      
+
                       {parse(lineBreak)}
-                      
+
                       <br />
                       <br />
                     </span>
-                  ))
-                  
-                  }
-                  
+                  ))}
                 </Typography>
               </div>
             </div>

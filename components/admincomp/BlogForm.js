@@ -13,9 +13,10 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { BACKEND_URI } from "../../contants";
 
 const fetchWorks = () => {
-  return axios.get("https://joshuaizutechs.herokuapp.com/admincp/getpost");
+  return axios.get(`${BACKEND_URI}/admincp/getpost`);
 };
 
 const queryClient = new QueryClient();
@@ -46,8 +47,8 @@ const BlogForm = () => {
 
   const addPost = (e) => {
     e.preventDefault();
-    
-    fetch("https://joshuaizutechs.herokuapp.com/admincp/createpost", {
+
+    fetch(`${BACKEND_URI}/admincp/createpost`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -73,7 +74,7 @@ const BlogForm = () => {
   };
   const deletePost = (postId, postTitle) => {
     if (confirm(`Proceed to remove ${postTitle}?`) == true) {
-      fetch(`https://joshuaizutechs.herokuapp.com/admincp/deletepost/${postId}`, {
+      fetch(`${BACKEND_URI}/admincp/deletepost/${postId}`, {
         method: "DELETE",
         headers: {
           "Content-type": "application/json",

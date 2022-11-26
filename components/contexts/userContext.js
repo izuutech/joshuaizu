@@ -1,4 +1,5 @@
 import React, { createContext, Component } from "react";
+import { BACKEND_URI } from "../../contants";
 
 export const UserContext = createContext();
 
@@ -12,7 +13,7 @@ class UserContextProvider extends Component {
   login = (password) => {
     // console.log(password);
 
-    fetch("https://joshuaizutechs.herokuapp.com/admincp/login", {
+    fetch(`${BACKEND_URI}/admincp/login`, {
       method: "POST",
       headers: {
         Accept: "application/json",

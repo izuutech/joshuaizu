@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 
 import Link from "next/link";
 
@@ -11,15 +11,13 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import Typography from "@mui/material/Typography";
 import CoffeeIcon from "@mui/icons-material/Coffee";
 import styles from "../../styles/Blog.module.css";
-
+import { BACKEND_URI } from "../../contants";
 
 const fetchPosts = (pageNo) => {
   if (pageNo) {
-    return axios.get(
-      `https://joshuaizutechs.herokuapp.com/admincp/getpost/users?page=${pageNo}`
-    );
+    return axios.get(`${BACKEND_URI}/admincp/getpost/users?page=${pageNo}`);
   } else {
-    return axios.get(`https://joshuaizutechs.herokuapp.com/admincp/getpost/users?page=1`);
+    return axios.get(`${BACKEND_URI}/admincp/getpost/users?page=1`);
   }
 };
 
@@ -65,7 +63,9 @@ const Blog = () => {
                     <div className={styles.postDown}>
                       <Typography variant="body1" className={styles.postBody}>
                         {/* output a part of the string (the first 1000 characters) */}
-                        {parse(`${post.content.substring(0, 200).split("<br>")}...`)}
+                        {parse(
+                          `${post.content.substring(0, 200).split("<br>")}...`
+                        )}
                       </Typography>
                     </div>
                   </div>
